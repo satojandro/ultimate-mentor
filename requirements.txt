@@ -1,4 +1,4 @@
-# Phase 1, Task 1: Environment Setup (Part 3 - Final)Here is the consolidated list of all the Python packages required for the "Ultimate Mentor" MVP.Action 1: Update requirements.txtOpen the requirements.txt file you created earlier and paste the following list into it. This list includes libraries for the AI agent, data scraping, vector embeddings, database connection, and interacting with our target web3 protocols.# --- Core Agent & LLM ---
+# --- Core Agent & LLM ---
 uagents
 openai
 langchain
@@ -6,10 +6,16 @@ langchain-openai
 langchain-community
 
 # --- Data Scraping & Processing ---
-firecrawl-py
+requests
 beautifulsoup4
 markdown
-requests
+
+# Selenium for browser automation
+selenium
+webdriver-manager
+
+# HTML to Markdown conversion
+markdownify
 
 # --- Vector Database ---
 supabase
@@ -22,12 +28,8 @@ hedera-sdk-py
 # For interacting with The Graph's GraphQL API
 gql[requests]
 
-# For general Ethereum interactions if needed
-web3
+# For general Ethereum interactions if needed web3
 
 # --- Utilities ---
 python-dotenv
 uvicorn
-
-# Action 2: Install All DependenciesNow, with your virtual environment (venv) still active, run the following command in your terminal. This will read the requirements.txt file and install all of the specified packages at once.pip install -r requirements.txt
-# This installation might take a few minutes.Once the command finishes without any red error messages, our environment setup is complete. We have our project structure, our isolated environment, and all the tools we need to start building.We are now officially ready to move on to Phase 1, Task 2: Data Scraping.Let me know when the installation is complete, and we will begin writing the scribe_agent_script to gather our data.
