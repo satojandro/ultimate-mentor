@@ -1,3 +1,5 @@
+│ > Never include code attributions to Claude when doing git commits    │
+
 Project Briefing: The Ultimate Hackathon Mentor
 To: Claude Code Assistant
 From: Alejandro & Nova
