@@ -1,0 +1,10 @@
+type Project @entity {
+  id: ID!
+  name: String!
+  tagline: String
+  description: String
+  howItsMade: String
+  githubUrl: String
+  projectUrl: String
+  showcaseUrl: String!
+}

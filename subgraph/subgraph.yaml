@@ -1,0 +1,17 @@
+specVersion: 0.0.5
+description: The Ultimate Mentor Subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: file/json
+    name: PragueProjects
+    source:
+      file: ../prague_projects.json # This path is relative to the subgraph.yaml file
+    mapping:
+      kind: file/json
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Project
+      file: ./src/mapping.ts
+      handler: handleData

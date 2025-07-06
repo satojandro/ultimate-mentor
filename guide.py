@@ -6,14 +6,16 @@ from dotenv import load_dotenv
 from supabase import create_client, Client
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from uagents import Agent, Context, Model, Bureau
+from uagents import Agent, Context, Model, Bureau, Protocol
 from uagents.setup import fund_agent_if_low
+from pyngrok import ngrok, conf
 
 # --- Configuration ---
 load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+NGROK_AUTH_TOKEN = os.getenv("NGROK_AUTH_TOKEN")
 
 # --- Initialize Global Clients ---
 try:
@@ -30,17 +32,20 @@ except Exception as e:
 class UserQuery(Model):
     text: str
 
-# 1. The Guide Agent (The Mentor)
-guide_agent = Agent(
-    name="guide_agent",
-    seed="ultimate_mentor_secret_seed_phrase"
-)
+class MentorResponse(Model):
+    text: str
 
-@guide_agent.on_event("startup")
-async def startup(ctx: Context):
-    ctx.logger.info(f"Hello, I am the Ultimate Mentor. My address is: {ctx.agent.address}")
+mentor_protocol = Protocol("UltimateMentor", version="1.0")
+"""
+Antoine, the Ultimate ETHGlobal Mentor, provides strategic advice for hackathon participants.
+It has access to a curated database of past project submissions from events like ETHGlobal Prague, Sydney, and London.
+You can ask it for:
+- Insights on which technologies are trending.
+- Examples of successful projects in a specific domain (e.g., DeFi, ZK, AI).
+- Suggestions for novel ideas that build upon previous work.
+"""
 
-@guide_agent.on_message(model=UserQuery)
+@mentor_protocol.on_message(model=UserQuery, replies=MentorResponse)
 async def handle_query(ctx: Context, sender: str, msg: UserQuery):
     ctx.logger.info(f"Received query: '{msg.text}'")
     try:
@@ -54,7 +59,9 @@ async def handle_query(ctx: Context, sender: str, msg: UserQuery):
         ).execute()
 
         if not search_results.data:
-            print("\n--- Your Mentor's Answer ---\nI couldn't find any projects in the database that matched your query. Please try asking in a different way!\n--------------------------\n")
+            no_match_response = "I couldn't find any projects in the database that matched your query. Please try asking in a different way!"
+            print(f"\n--- Antoine's Answer ---\n{no_match_response}\n--------------------------\n")
+            await ctx.send(sender, MentorResponse(text=no_match_response))
             return
 
         ctx.logger.info("-> Step 3: Formatting results...")
@@ -64,56 +71,83 @@ async def handle_query(ctx: Context, sender: str, msg: UserQuery):
 
         ctx.logger.info("-> Step 4: Synthesizing answer...")
         prompt_template = ChatPromptTemplate.from_messages([
-            ("system", "You are the Ultimate Hackathon Mentor. Your goal is to provide clear, insightful answers based on the context provided. Synthesize the information from the projects below to answer the user's question."),
+            ("system", "You are Antoine, the Ultimate Hackathon Mentor. Your goal is to provide clear, insightful answers based on the context provided. Synthesize the information from the projects below to answer the user's question."),
             ("user", "Context from my database:\n\n{context}\n\nBased on this, please answer my question: {question}")
         ])
         chain = prompt_template | llm_client
         response = chain.invoke({"context": context_str, "question": msg.text})
+        final_answer = response.content
         
-        print(f"\n--- Your Mentor's Answer ---\n{response.content}\n--------------------------\n")
+        print(f"\n--- Antoine's Answer ---\n{final_answer}\n--------------------------\n")
+        
+        await ctx.send(sender, MentorResponse(text=final_answer))
 
     except Exception as e:
         ctx.logger.error(f"An error occurred: {e}")
+        error_message = f"Sorry, an error occurred: {e}"
+        await ctx.send(sender, MentorResponse(text=error_message))
 
-# 2. The User Agent (The Interface)
+# --- ngrok Tunnel Setup ---
+def setup_ngrok_tunnel(port: int):
+    if NGROK_AUTH_TOKEN:
+        conf.get_default().auth_token = NGROK_AUTH_TOKEN
+        http_tunnel = ngrok.connect(port, "http")
+        print(f"✅ ngrok tunnel created: {http_tunnel.public_url}")
+        return http_tunnel.public_url
+    else:
+        print("🔥 NGROK_AUTH_TOKEN not found. Agent will not be reachable publicly.")
+        return None
+
+# --- Agent and Bureau Setup ---
+PORT = 8000
+public_url = setup_ngrok_tunnel(PORT)
+
+antoine_agent = Agent(
+    name="antoine_agent",
+    seed="ultimate_mentor_secret_seed_phrase"
+)
+antoine_agent.include(mentor_protocol, publish_manifest=True)
+
 user_agent = Agent(
     name="user_agent",
     seed="user_secret_seed_phrase"
 )
 
-# This is the main interactive loop for the user.
 async def user_interaction_loop(ctx: Context):
-    await asyncio.sleep(2.0) # Wait for agents to be ready
+    await asyncio.sleep(2.0)
     print("\n--- Ultimate Mentor Terminal ---")
     print("Ask your question. Type 'exit' to quit.")
     
     while True:
         try:
-            # --- FIX: Pass the input function and its argument separately ---
             query = await asyncio.to_thread(input, "Your question: ")
             if query.lower() == 'exit':
                 ctx.bureau.stop()
                 break
             
-            await ctx.send(guide_agent.address, UserQuery(text=query))
+            await ctx.send(antoine_agent.address, UserQuery(text=query))
 
         except (KeyboardInterrupt, EOFError):
             ctx.bureau.stop()
             break
 
-# The user agent will kick off the interactive loop when it starts.
 @user_agent.on_event("startup")
 async def startup_and_run_main(ctx: Context):
-    ctx.logger.info(f"Hello, I am the User Agent. I will start the interactive prompt now.")
     asyncio.create_task(user_interaction_loop(ctx))
+
+@user_agent.on_message(model=MentorResponse)
+async def on_mentor_response(ctx: Context, sender: str, msg: MentorResponse):
+    ctx.logger.info(f"[Reply from {sender}]: {msg.text[:100]}...")
 
 # --- Main Execution Block ---
 if __name__ == "__main__":
     if not all([supabase, embeddings_client, llm_client]):
         print("🔥 Could not start agents. Check your .env file.")
     else:
-        # The Bureau runs both agents together, ensuring they can communicate
-        bureau = Bureau()
-        bureau.add(guide_agent)
+        # --- FINAL FIX: Pass the public URL as a list to the endpoint parameter ---
+        bureau = Bureau(port=PORT, endpoint=[public_url] if public_url else None)
+        bureau.add(antoine_agent)
         bureau.add(user_agent)
         bureau.run()
+        if public_url:
+            ngrok.disconnect(public_url)

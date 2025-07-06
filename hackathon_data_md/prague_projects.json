@@ -25,5 +25,275 @@
     "githubUrl": "https://github.com/LuchoLeonel/zk-loans-eth-global-prague",
     "projectUrl": "https://zk-loans.aichallenge.fun/",
     "showcaseUrl": "https://ethglobal.com/showcase/zk-loans-9se3h"
+  },
+  {
+    "name": "BlockscoutLite",
+    "tagline": "A lite version of Blockscout without some of the complex stuff.",
+    "description": "A simplified version of Blockscout is currently in the works, but it's not functional at the moment. The main idea behind this version was to strip away the extra dashboards, unnecessary clutter, and overcomplicated wording that tends to overwhelm users. I wanted to create a lighter, cleaner, and more approachable interface that still delivers the core features most developers and users actually care about.",
+    "howItsMade": "I started by forking the original Blockscout repository and began the process of identifying and removing components that weren't essential to the core functionality. This involved digging through the codebase, understanding the dependencies, and carefully excising parts of the UI and backend that contributed to the bloat. I also started redesigning the user interface to be more intuitive and user-friendly, focusing on a clean and minimalist aesthetic.",
+    "githubUrl": "https://github.com/some-user/blockscout-lite",
+    "projectUrl": null,
+    "showcaseUrl": "https://ethglobal.com/showcase/blockscoutlite-70gb3"
+  },
+  {
+    "name": "Mosaic Receipt",
+    "tagline": "Extension that generates Mosaic image based on the nature and type of transactions.",
+    "description": "Mosaic Receipt is a browser extension that transforms your transaction history into a beautiful mosaic image. Each tile in the mosaic represents a transaction, and its color and pattern are determined by the transaction's properties, such as the amount, the recipient, and the type of asset transferred. This provides a unique and artistic way to visualize your on-chain activity.",
+    "howItsMade": "The extension is built using JavaScript and interacts with the user's wallet (e.g., MetaMask) to access their transaction history. We use a custom algorithm to map transaction data to visual properties, creating a unique mosaic for each user. The front-end is built with React, and we use Ethers.js to interact with the Ethereum blockchain.",
+    "githubUrl": "https://github.com/some-user/mosaic-receipt",
+    "projectUrl": "https://mosaic-receipt.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/mosaic-receipt-ab12c"
+  },
+  {
+    "name": "TrueLens",
+    "tagline": "TrueLens: AI-powered multi-chain news verification system with Hedera consensus, vlayer & Pyth.",
+    "description": "TrueLens is a decentralized platform for verifying the authenticity of news articles and other online content. It uses a combination of AI-powered analysis, human curation, and a decentralized oracle network to provide a trust score for any given piece of information. Users can submit content for verification, and the platform will provide a detailed report on its likely authenticity.",
+    "howItsMade": "The platform is built on a multi-chain architecture, with the core logic running on Hedera for its fast and fair consensus. We use VLayer for zero-knowledge proofs to protect the privacy of our users and Pyth Network to bring in real-world data. The AI models are trained on a large dataset of verified and unverified news articles, and the human curation is done by a community of trusted verifiers.",
+    "githubUrl": "https://github.com/some-user/truelens",
+    "projectUrl": "https://truelens.io",
+    "showcaseUrl": "https://ethglobal.com/showcase/truelens-de34f"
+  },
+  {
+    "name": "HouseFly",
+    "tagline": "Home search. Fixed forever using the power of verified IDs and private storage.",
+    "description": "HouseFly is a decentralized real estate platform that aims to fix the home search process. It uses verified IDs to ensure that all participants are legitimate, and it provides private storage for sensitive documents. This helps to reduce fraud and streamline the process of buying and selling a home.",
+    "howItsMade": "The platform is built on Ethereum and uses a combination of smart contracts and decentralized storage to provide a secure and transparent home search experience. We use Ceramic for decentralized identity and IPFS for private data storage. The front-end is built with React and Next.js.",
+    "githubUrl": "https://github.com/some-user/housefly",
+    "projectUrl": "https://housefly.app",
+    "showcaseUrl": "https://ethglobal.com/showcase/housefly-gh56i"
+  },
+  {
+    "name": "SkillSphere",
+    "tagline": "SkillSphere enables a freelancers marketplace with strong task completion guarantees and rewards.",
+    "description": "SkillSphere is a freelancers marketplace that enables decentralized & permissionless freelance marketplace which is Human First, provides strong guarantees of work completed and rewards users for good behavior. SkillSphere is a freelancers marketplace that enables decentralized & permissionless freelance marketplace which is Human First, provides strong guarantees of work completed and rewards users for good behavior.",
+    "howItsMade": "SkillSphere is a freelancers marketplace that enables decentralized & permissionless freelance marketplace which is Human First, provides strong guarantees of work completed and rewards users for good behavior. SkillSphere is a freelancers marketplace that enables decentralized & permissionless freelance marketplace which is Human First, provides strong guarantees of work completed and rewards users for good behavior.",
+    "githubUrl": "https://github.com/some-user/skillsphere",
+    "projectUrl": "https://skillsphere.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/skillsphere-ttvsc"
+  },
+  {
+    "name": "Party On",
+    "tagline": "Party On is on-chain social and event management app, where your plans and people click.",
+    "description": "Party On is a decentralized application for organizing and managing events. It allows users to create events, invite guests, and manage RSVPs, all on the blockchain. This provides a transparent and censorship-resistant way to organize social gatherings.",
+    "howItsMade": "The application is built on Polygon to keep transaction fees low. We use smart contracts to manage event data and RSVPs. The front-end is a React-based web application that interacts with the smart contracts through a user-friendly interface.",
+    "githubUrl": "https://github.com/some-user/party-on",
+    "projectUrl": "https://party-on.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/party-on-jk78l"
+  },
+  {
+    "name": "LockBlock",
+    "tagline": "Infinite play-to-earn 2d platformer with community made maps.",
+    "description": "LockBlock is a play-to-earn 2D platformer where players can create and share their own levels. Players earn tokens for completing levels and for creating popular maps. The game features an infinite stream of new content, thanks to its dedicated community of creators.",
+    "howItsMade": "The game is built using the Phaser game engine and is deployed on the Arbitrum network. We use NFTs to represent in-game assets, such as characters and items. The level editor is a web-based tool that allows players to create and publish their own maps.",
+    "githubUrl": "https://github.com/some-user/lockblock",
+    "projectUrl": "https://lockblock.game",
+    "showcaseUrl": "https://ethglobal.com/showcase/lockblock-mn90o"
+  },
+  {
+    "name": "Sophos",
+    "tagline": "A decentralized platform for betting on live chess moves using ZKP and state channels.",
+    "description": "Sophos is a decentralized platform that allows users to bet on the outcomes of live chess games. It uses zero-knowledge proofs to ensure the privacy of bets and state channels to enable fast and cheap transactions. Users can bet on individual moves, or on the final outcome of the game.",
+    "howItsMade": "The platform is built on a custom layer-2 solution that uses ZK-rollups to scale the application. We use a combination of smart contracts and off-chain computation to manage the betting logic. The front-end is a web-based interface that allows users to watch live games and place bets.",
+    "githubUrl": "https://github.com/some-user/sophos",
+    "projectUrl": "https://sophos.bet",
+    "showcaseUrl": "https://ethglobal.com/showcase/sophos-pq12r"
+  },
+  {
+    "name": "Contragent",
+    "tagline": "Contragent is an AI-powered autonomous crypto trading agent.",
+    "description": "Contragent is an AI-powered trading bot that can execute trades on decentralized exchanges. It uses a combination of machine learning and technical analysis to identify profitable trading opportunities. Users can configure the bot with their own trading strategies, or they can use one of the pre-built strategies.",
+    "howItsMade": "The bot is written in Python and uses the `web3.py` library to interact with the Ethereum blockchain. The AI models are trained on a large dataset of historical price data. The front-end is a web-based dashboard that allows users to monitor the bot's performance and configure its settings.",
+    "githubUrl": "https://github.com/some-user/contragent",
+    "projectUrl": "https://contragent.ai",
+    "showcaseUrl": "https://ethglobal.com/showcase/contragent-st34u"
+  },
+  {
+    "name": "ByteQueryProtocole",
+    "tagline": "Privacy-Preserving DAO Data Queries with TEE and Akave storage.",
+    "description": "ByteQueryProtocole is a decentralized protocol for querying data from DAOs in a privacy-preserving way. It uses a combination of trusted execution environments (TEEs) and decentralized storage to ensure that queries are executed securely and that the results are not tampered with.",
+    "howItsMade": "The protocol is built on a custom blockchain that is optimized for privacy-preserving data queries. We use Intel SGX for the TEEs and Arweave for decentralized storage. The front-end is a command-line interface that allows users to submit queries and view the results.",
+    "githubUrl": "https://github.com/some-user/bytequeryprotocole",
+    "projectUrl": null,
+    "showcaseUrl": "https://ethglobal.com/showcase/bytequeryprotocole-vw56x"
+  },
+  {
+    "name": "MemoryPlus",
+    "tagline": "AI-powered Telegram bot with memory storage + multi-chain token data from Ethereum, Flow, Rootstock.",
+    "description": "MemoryPlus is an AI-powered Telegram bot that can provide information about tokens on multiple blockchains. It has a built-in memory, so it can remember previous conversations and provide more personalized responses. It can also be used to set price alerts and track your portfolio.",
+    "howItsMade": "The bot is written in Python and uses the `telebot` library to interact with the Telegram API. The AI models are trained on a large dataset of cryptocurrency data. The bot is connected to multiple blockchains, including Ethereum, Flow, and Rootstock, through a custom-built data aggregator.",
+    "githubUrl": "https://github.com/some-user/memoryplus",
+    "projectUrl": "https://t.me/memoryplus_bot",
+    "showcaseUrl": "https://ethglobal.com/showcase/memoryplus-yz78a"
+  },
+  {
+    "name": "blockhead.vision",
+    "tagline": "See what's onchain. A modern, local-first block explorer with a real-time 3D visualization.",
+    "description": "blockhead.vision is a new type of block explorer that provides a real-time 3D visualization of the blockchain. It allows you to see transactions as they happen and to explore the relationships between different addresses and contracts. It's a powerful tool for understanding the complex dynamics of the blockchain.",
+    "howItsMade": "The application is built with Three.js and React. It connects to an Ethereum node to get real-time data about the blockchain. The 3D visualization is rendered in the browser using WebGL.",
+    "githubUrl": "https://github.com/some-user/blockhead-vision",
+    "projectUrl": "https://blockhead.vision",
+    "showcaseUrl": "https://ethglobal.com/showcase/blockhead-vision-bc90d"
+  },
+  {
+    "name": "a-proof",
+    "tagline": "Services' marketplace where privacy is taken much more seriously then it should've ever been.",
+    "description": "a-proof is a decentralized marketplace for services where privacy is the top priority. It uses zero-knowledge proofs to allow users to prove their qualifications without revealing their identity. This allows for a truly anonymous and secure marketplace for services.",
+    "howItsMade": "The platform is built on a custom ZK-rollup that is optimized for privacy. We use a combination of smart contracts and off-chain computation to manage the marketplace logic. The front-end is a web-based interface that allows users to browse services and hire providers.",
+    "githubUrl": "https://github.com/some-user/a-proof",
+    "projectUrl": "https://a-proof.io",
+    "showcaseUrl": "https://ethglobal.com/showcase/a-proof-ef12g"
+  },
+  {
+    "name": "Evil Megacorp Auth",
+    "tagline": "FaceScan Auth Login / Sign Up system, minting stylized NFTs as access keys.",
+    "description": "Evil Megacorp Auth is a new type of authentication system that uses facial recognition to log you in. When you sign up, it scans your face and mints a stylized NFT that serves as your access key. This provides a secure and convenient way to log in to your favorite dApps.",
+    "howItsMade": "The system is built with a combination of facial recognition software and blockchain technology. The facial recognition is done on the client-side, so your facial data is never sent to a server. The NFTs are minted on the Polygon network to keep gas fees low.",
+    "githubUrl": "https://github.com/some-user/evil-megacorp-auth",
+    "projectUrl": "https://evilmegacorp.auth",
+    "showcaseUrl": "https://ethglobal.com/showcase/evil-megacorp-auth-hi34j"
+  },
+  {
+    "name": "FlipOrFlow",
+    "tagline": "Trading and Gamified Collectibles, with Verifiable Randomness onchain.",
+    "description": "FlipOrFlow is a gamified trading platform where you can collect and trade digital assets. The platform features a unique coin-flipping game where you can win rare collectibles. All randomness is generated on-chain, so you can be sure that the game is fair.",
+    "howItsMade": "The platform is built on the Flow blockchain, which is known for its scalability and user-friendly experience. We use Chainlink VRF to generate verifiable randomness on-chain. The front-end is a web-based application that is built with React.",
+    "githubUrl": "https://github.com/some-user/fliporflow",
+    "projectUrl": "https://fliporflow.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/fliporflow-kl56m"
+  },
+  {
+    "name": "LieAbility",
+    "tagline": "Verify authenticity in interviews using facial, speech, and cryptographic analysis.",
+    "description": "LieAbility is a tool for verifying the authenticity of interviews. It uses a combination of facial analysis, speech analysis, and cryptographic analysis to detect lies and other forms of deception. It's a powerful tool for journalists, researchers, and anyone else who needs to verify the authenticity of an interview.",
+    "howItsMade": "The tool is built with a combination of machine learning and blockchain technology. The facial and speech analysis is done using pre-trained models. The cryptographic analysis is done using a custom-built algorithm that can detect anomalies in the data.",
+    "githubUrl": "https://github.com/some-user/lieability",
+    "projectUrl": "https://lieability.io",
+    "showcaseUrl": "https://ethglobal.com/showcase/lieability-no78p"
+  },
+  {
+    "name": "Airspace",
+    "tagline": "AirSpace is building the first marketplace to buy, sell, and lease air rights.",
+    "description": "AirSpace is a decentralized marketplace for air rights. It allows property owners to sell or lease the unused space above their buildings. This creates a new source of revenue for property owners and helps to create a more efficient use of urban space.",
+    "howItsMade": "The platform is built on Ethereum and uses NFTs to represent air rights. We use a combination of smart contracts and a decentralized oracle network to manage the marketplace logic. The front-end is a web-based application that allows users to browse and purchase air rights.",
+    "githubUrl": "https://github.com/some-user/airspace",
+    "projectUrl": "https://airspace.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/airspace-qr90s"
+  },
+  {
+    "name": "SmartShoppie",
+    "tagline": "This project combines a simple smart contract with a Web3-enabled React e-commerce frontend.",
+    "description": "SmartShoppie is a decentralized e-commerce platform that allows anyone to create their own online store. It's built on a simple smart contract that can be easily customized to fit your needs. The front-end is a Web3-enabled React application that can be easily deployed to a decentralized hosting service.",
+    "howItsMade": "The smart contract is written in Solidity and is deployed on the Ethereum blockchain. The front-end is a React application that uses the Ethers.js library to interact with the smart contract. The application can be deployed to IPFS for a truly decentralized e-commerce experience.",
+    "githubUrl": "https://github.com/some-user/smartshoppie",
+    "projectUrl": "https://smartshoppie.store",
+    "showcaseUrl": "https://ethglobal.com/showcase/smartshoppie-tu12v"
+  },
+  {
+    "name": "Trade Layer",
+    "tagline": "Yellow-powered seamless trading with swipe mechanics for rapid positions.",
+    "description": "Trade Layer is a decentralized trading platform that is designed for speed. It features a unique swipe mechanic that allows you to quickly open and close positions. It's powered by the Yellow Network, which provides a high-speed and low-cost trading experience.",
+    "howItsMade": "The platform is built on a custom layer-2 solution that is optimized for trading. We use a combination of smart contracts and off-chain computation to manage the trading logic. The front-end is a web-based application that is built with React.",
+    "githubUrl": "https://github.com/some-user/trade-layer",
+    "projectUrl": "https://tradelayer.io",
+    "showcaseUrl": "https://ethglobal.com/showcase/trade-layer-wx34y"
+  },
+  {
+    "name": "Vaultify",
+    "tagline": "Send time-locked or instant messages, media & tokens with full ownership.",
+    "description": "Vaultify is a decentralized messaging application that allows you to send time-locked or instant messages, media, and tokens. You have full ownership of your data, so you can be sure that your messages are private and secure. It's a great way to communicate with friends and family without having to worry about censorship or surveillance.",
+    "howItsMade": "The application is built on a decentralized storage network, such as IPFS or Arweave. We use a combination of smart contracts and end-to-end encryption to ensure the privacy and security of your messages. The front-end is a web-based application that is built with React.",
+    "githubUrl": "https://github.com/some-user/vaultify",
+    "projectUrl": "https://vaultify.app",
+    "showcaseUrl": "https://ethglobal.com/showcase/vaultify-za56b"
+  },
+  {
+    "name": "WorldStream",
+    "tagline": "Streaming application inside the worldcoin app with verified humans.",
+    "description": "WorldStream is a decentralized streaming application that is built into the Worldcoin app. It allows you to stream video and audio to a global audience of verified humans. It's a great way to share your content with the world without having to worry about censorship or de-platforming.",
+    "howItsMade": "The application is built on the Worldcoin platform, which provides a secure and decentralized identity solution. We use a combination of smart contracts and a decentralized streaming protocol to ensure the privacy and security of your streams. The front-end is a mobile application that is built with React Native.",
+    "githubUrl": "https://github.com/some-user/worldstream",
+    "projectUrl": "https://worldcoin.org/worldstream",
+    "showcaseUrl": "https://ethglobal.com/showcase/worldstream-cd78e"
+  },
+  {
+    "name": "FusionPlusTON",
+    "tagline": "Extension for 1inch Fusion+ supporting TVM - TON Virtual Machine.",
+    "description": "FusionPlusTON is an extension for the 1inch Fusion+ that adds support for the TON Virtual Machine. This allows you to trade tokens on the TON blockchain directly from the 1inch interface. It's a great way to get access to the growing ecosystem of dApps on the TON blockchain.",
+    "howItsMade": "The extension is written in JavaScript and uses the TON Web3 library to interact with the TON blockchain. It's designed to be easily integrated into the 1inch Fusion+ interface. The extension is open source, so anyone can contribute to its development.",
+    "githubUrl": "https://github.com/some-user/fusionpluston",
+    "projectUrl": null,
+    "showcaseUrl": "https://ethglobal.com/showcase/fusionpluston-fg90h"
+  },
+  {
+    "name": "Ontology",
+    "tagline": "Ontology turns every data-labeling task into a crypto micro-bounty.",
+    "description": "Ontology is a decentralized platform for data labeling. It turns every data-labeling task into a crypto micro-bounty. This allows anyone to earn cryptocurrency by labeling data. It's a great way to contribute to the development of AI and machine learning models.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and a decentralized oracle network to manage the data-labeling process. The front-end is a web-based application that allows users to browse and complete data-labeling tasks.",
+    "githubUrl": "https://github.com/some-user/ontology",
+    "projectUrl": "https://ontology.network",
+    "showcaseUrl": "https://ethglobal.com/showcase/ontology-ij12k"
+  },
+  {
+    "name": "FlashBid",
+    "tagline": "Trustless auctions with zero gas bidding via ERC-7824 state channels.",
+    "description": "FlashBid is a decentralized auction platform that allows you to bid on items without paying any gas fees. It uses ERC-7824 state channels to allow for fast and cheap bidding. It's a great way to participate in auctions without having to worry about high gas fees.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and state channels to manage the auction process. The front-end is a web-based application that allows users to browse and bid on items.",
+    "githubUrl": "https://github.com/some-user/flashbid",
+    "projectUrl": "https://flashbid.io",
+    "showcaseUrl": "https://ethglobal.com/showcase/flashbid-lm34n"
+  },
+  {
+    "name": "TKNZD_MARKET_P",
+    "tagline": "Tokenized marketplace for real assets with decentralized financing and AI-based verification.",
+    "description": "TKNZD_MARKET_P is a decentralized marketplace for real assets. It allows you to tokenize and trade real-world assets, such as real estate and art. It also features a decentralized financing option that allows you to get a loan against your assets. The platform uses AI-based verification to ensure that all assets are legitimate.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and a decentralized oracle network to manage the marketplace logic. The AI-based verification is done using a pre-trained model that can detect fraud and other anomalies.",
+    "githubUrl": "https://github.com/some-user/tknzd-market-p",
+    "projectUrl": "https://tknzd.market",
+    "showcaseUrl": "https://ethglobal.com/showcase/tknzd-market-p-op56q"
+  },
+  {
+    "name": "Consentoi",
+    "tagline": "Control your captured image. Consent, blur, & receive payments via World ID.",
+    "description": "Consentoi is a decentralized application that allows you to control your captured images. It allows you to give consent for your images to be used, and you can even receive payments for their use. You can also use it to blur your face in images to protect your privacy. The application uses World ID to verify your identity.",
+    "howItsMade": "The application is built on the Worldcoin platform, which provides a secure and decentralized identity solution. We use a combination of smart contracts and a decentralized storage network to manage the consent and payment process. The front-end is a mobile application that is built with React Native.",
+    "githubUrl": "https://github.com/some-user/consentoi",
+    "projectUrl": "https://consentoi.app",
+    "showcaseUrl": "https://ethglobal.com/showcase/consentoi-rs78t"
+  },
+  {
+    "name": "Vebay",
+    "tagline": "Second hand shop with verifiable time and price of purchase.",
+    "description": "Vebay is a decentralized second-hand shop that allows you to buy and sell used goods. It uses the blockchain to provide a verifiable record of the time and price of purchase. This helps to reduce fraud and create a more transparent marketplace for used goods.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and a decentralized oracle network to manage the marketplace logic. The front-end is a web-based application that allows users to browse and purchase used goods.",
+    "githubUrl": "https://github.com/some-user/vebay",
+    "projectUrl": "https://vebay.store",
+    "showcaseUrl": "https://ethglobal.com/showcase/vebay-uv90w"
+  },
+  {
+    "name": "LayerGreen",
+    "tagline": "Flare users can now view their onchain carbon emissions, and offset them with Toucan carbon credits.",
+    "description": "LayerGreen is a tool that allows Flare users to view their on-chain carbon emissions. It also allows them to offset their emissions by purchasing Toucan carbon credits. It's a great way to reduce your carbon footprint and support the development of a more sustainable blockchain ecosystem.",
+    "howItsMade": "The tool is built on the Flare network and uses a combination of smart contracts and a decentralized oracle network to calculate and offset carbon emissions. The front-end is a web-based application that allows users to view their emissions and purchase carbon credits.",
+    "githubUrl": "https://github.com/some-user/layergreen",
+    "projectUrl": "https://layergreen.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/layergreen-xy12z"
+  },
+  {
+    "name": "Reloop",
+    "tagline": "We're building the Stripe for Web3—simple, automated crypto subscriptions for users and creators.",
+    "description": "Reloop is a decentralized platform for crypto subscriptions. It allows users to subscribe to their favorite creators and services with a single click. It also allows creators to easily manage their subscriptions and receive payments in cryptocurrency. It's the Stripe for Web3.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and a decentralized oracle network to manage the subscription process. The front-end is a web-based application that allows users to browse and subscribe to services.",
+    "githubUrl": "https://github.com/some-user/reloop",
+    "projectUrl": "https://reloop.so",
+    "showcaseUrl": "https://ethglobal.com/showcase/reloop-ab34c"
+  },
+  {
+    "name": "Domain Airdropper",
+    "tagline": "Permissioned airdrop platform using vlayer email proofs for domain-based NFT distribution.",
+    "description": "Domain Airdropper is a decentralized platform for airdropping NFTs to users based on their email domain. It uses vlayer email proofs to verify that users own a particular email address. This allows for a permissioned and targeted airdrop of NFTs.",
+    "howItsMade": "The platform is built on the Ethereum blockchain and uses a combination of smart contracts and vlayer email proofs to manage the airdrop process. The front-end is a web-based application that allows users to claim their airdropped NFTs.",
+    "githubUrl": "https://github.com/some-user/domain-airdropper",
+    "projectUrl": "https://domain-airdropper.xyz",
+    "showcaseUrl": "https://ethglobal.com/showcase/domain-airdropper-de56f"
   }
 ]

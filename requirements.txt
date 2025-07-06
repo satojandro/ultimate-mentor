@@ -33,3 +33,6 @@ gql[requests]
 # --- Utilities ---
 python-dotenv
 uvicorn
+
+# Tunnel to Agentverse
+pyngrok
