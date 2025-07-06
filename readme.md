@@ -1,5 +1,5 @@
-The Ultimate Hackathon Mentor (Antoine)
-The Ultimate Hackathon Mentor is a prototype for a trustworthy, verifiable AI agent designed to accelerate developer innovation. It provides deep, non-obvious insights into the web3 ecosystem by learning from the entire history of past hackathon projects.
+Antoine - The Ultimate Hackathon Mentor
+Antoine is a prototype for a trustworthy, verifiable AI agent designed to accelerate developer innovation. It provides deep, non-obvious insights into the web3 ecosystem by learning from the entire history of past hackathon projects.
 
 Our mission is to help builders break out of the "beginner loop" and to provide a blueprint for building AI systems that you don't have to blindly trust, because you can verify their work on-chain.
 
@@ -10,18 +10,16 @@ For Builders: It tackles information overload and the lack of historical context
 
 For Sponsors & The Ecosystem: It addresses the "AI trust deficit" and low project ROI. Our architecture provides a model for verifiable AI, ensuring higher quality insights and helping to foster projects with a greater potential for long-term success.
 
-Core Architecture
-The Mentor (codenamed Antoine) is built on a multi-layered, decentralized stack where each component provides a piece of the "trust puzzle."
+Core Architecture & Current Status
+The MVP of Antoine is a fully functional, local application that proves our core concept.
 
-Agent Logic (ASI): The core agent is built using the Artificial Superintelligence Alliance (ASI) uagents framework.
+Agent Logic (ASI): The core agent is built using the Artificial Superintelligence Alliance (ASI) uagents framework. It is successfully registered and discoverable on the ASI testnet Almanac.
 
-Data Foundation (Supabase): Project data is processed and stored in a Supabase Postgres database with pgvector for powerful semantic search capabilities.
+Data Foundation (Supabase): We have manually curated a high-quality dataset of 33 projects from ETHGlobal Prague. This data has been processed, vectorized, and stored in a Supabase Postgres database, which acts as the agent's "long-term memory."
 
-Verifiable Knowledge (The Graph): (Roadmap) The agent's knowledge base will be indexed as a Subgraph on The Graph, allowing anyone to independently query and verify the data the agent is using.
+Live Demo: The agent can be run locally via the guide.py script, allowing users to ask complex questions and receive insightful answers in the terminal.
 
-Secure Compute (Oasis Protocol): (Roadmap) The agent's core logic will be deployed inside an Oasis Protocol ROFL TEE for confidentiality of user queries and agent "thoughts."
-
-Immutable Logging (Hedera): (Roadmap) Agent actions will be logged to the Hedera Consensus Service (HCS) to create a tamper-proof audit trail.
+Frontend Assets: The project includes a polished demo.html for video presentations and a landing.html with a live Supabase email capture form to build a community waitlist.
 
 How to Run & Engage with the Project
 There are two main components to this project: the functional Backend Agent and the Frontend UIs.
@@ -33,7 +31,7 @@ Activate Environment: Make sure you are in the ultimate-mentor directory and you
 
 source venv/bin/activate
 
-Check Configuration: Ensure your .env file is populated with your SUPABASE_URL, SUPABASE_KEY, and OPENAI_API_KEY.
+Check Configuration: Ensure your .env file is populated with your SUPABASE_URL, SUPABASE_KEY, OPENAI_API_KEY, and NGROK_AUTH_TOKEN.
 
 Run the Agent:
 
@@ -42,27 +40,39 @@ python guide.py
 Interact: The terminal will display a Your question: prompt. You can now ask the agent questions about the projects in the database (e.g., "What projects used ZK-proofs?").
 
 2. Engaging with the Frontend
-We have created two separate HTML files located in the frontend/ directory. You can open these directly in your Brave (or any other) browser.
+We have created two separate HTML files located in the frontend/ directory. You can open these directly in your browser.
 
-frontend/demo.html (The Mock Demo):
+frontend/demo.html (The Mock Demo): This is a high-fidelity mockup with a pre-scripted conversation, perfect for video presentations.
 
-Purpose: This is a high-fidelity, polished mockup designed for video presentations.
+frontend/landing.html (The Landing Page): This is a live landing page that captures emails and saves them to our Supabase database.
 
-How to use: Open the file in your browser. To start the pre-scripted conversation, simply click the "SEND" button or press Enter. The entire conversation will play out automatically.
+Project Roadmap & Future Features
+This MVP is the foundation for a much larger vision. Our roadmap is focused on building out the "trust stack" and enhancing the agent's intelligence.
 
-frontend/index.html (The Live UI):
+Expand the Knowledge Base:
 
-Purpose: This is the clean user interface that is ready to be connected to a live backend API in the future.
+Index More Projects: Systematically scrape and process project data from all recent ETHGlobal hackathons to give Antoine a comprehensive memory of the ecosystem.
 
-How to use: Open the file in your browser. You can type messages, but it will currently only return a placeholder response as it is not connected to our Python agent.
+Index Prize Data: Create a separate data pipeline and database table for all sponsor prizes. This will allow Antoine to answer questions like, "What were the most valuable bounties for DeFi projects at ETHGlobal London?" and to find synergies between prizes and projects.
 
-Project Roadmap
-Our MVP has a functional local backend and two frontend assets. The next steps on our critical path are to integrate the core "trust" layers of our architecture.
+Finalize The Graph Integration:
 
-[High Priority] The Graph Integration: Create a Subgraph to index our project data from the Supabase DB. Modify the Guide Agent to query this Subgraph, making its knowledge base publicly verifiable.
+Deploy our existing subgraph scaffold to The Graph's hosted service.
 
-[Stretch Goal] Oasis TEE Deployment: Containerize the Guide Agent with Docker and deploy it as a ROFL instance on the Oasis Sapphire testnet. This will make the agent's operations confidential.
+Modify Antoine to query this public GraphQL endpoint. This is a critical step that makes our agent's knowledge base fully transparent and verifiable by anyone, solidifying our "AI Trust" narrative.
 
-[Future] Full API & Frontend Connection: Build a simple API (e.g., using FastAPI) around our Python agent and connect it to the index.html file to create a fully interactive web experience.
+Deploy Live Frontend:
 
-[Future] Hedera Logging: Integrate the Hedera SDK to log key agent actions (queries received, data sources consulted) to the Hedera Consensus Service for a full audit trail.
+Build a simple API wrapper (e.g., using FastAPI) around our Python agent.
+
+Connect the frontend/index.html UI to this API, creating a fully interactive web experience for users.
+
+Integrate Oasis for Secure & Private Compute:
+
+Containerize Antoine with Docker.
+
+Deploy the agent as a ROFL instance on the Oasis Sapphire testnet. This will ensure that all user queries and the agent's internal "thought processes" are completely confidential and tamper-proof.
+
+Add Hedera for an Immutable Audit Trail:
+
+Integrate the Hedera Consensus Service (HCS) to create a public, timestamped log of Antoine's most important actions (e.g., "New data source added," "Query received," "Answer provided"). This provides the final layer of trust: a complete, unchangeable audit trail of the agent's behavior.
